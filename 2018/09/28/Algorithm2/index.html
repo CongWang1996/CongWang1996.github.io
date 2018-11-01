@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Cynthia Wang</title>
+  <title>算法的复杂度到底是怎么计算的？ --以分治算法为例 | Cynthia Wang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cynthia Wang">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这里是内容简介">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法的复杂度到底是怎么计算的？ --以分治算法为例">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/Algorithm2/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
+<meta property="og:description" content="这里是内容简介">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/28/Algorithm2/fenzhi1.png">
+<meta property="og:updated_time" content="2018-10-08T12:58:28.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cynthia Wang">
+<meta name="twitter:title" content="算法的复杂度到底是怎么计算的？ --以分治算法为例">
+<meta name="twitter:description" content="这里是内容简介">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/28/Algorithm2/fenzhi1.png">
   
     <link rel="alternative" href="/atom.xml" title="Cynthia Wang" type="application/atom+xml">
   
@@ -144,178 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-sumo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Algorithm2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/sumo/">SUMO(Simulation of Urban Mobility)安装 --亲测版</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/sumo/" class="archive-article-date">
-  	<time datetime="2018-10-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是SUMO？"><a href="#什么是SUMO？" class="headerlink" title="什么是SUMO？"></a>什么是SUMO？</h2><blockquote>
-<p>Simulation of Urban Mobility，也就是城市环境下移动场景的仿真。</p>
-<blockquote>
-<p>笔者主攻车联网的数据分发及路由和NDN应用，在科研中需要做车联网仿真，所以用到了SUMO。</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/11/01/sumo/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">仿真</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/sumo/">view more&gt;&gt; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/Algorithm/">算法的复杂度到底是怎么计算的？ --以分治算法为例</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/28/Algorithm/" class="archive-article-date">
-  	<time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是分治算法？"><a href="#什么是分治算法？" class="headerlink" title="什么是分治算法？"></a>什么是分治算法？</h2><blockquote>
-<p>分治算法解决问题通常需要以下步骤：</p>
-<blockquote>
-<p>1、将原问题分解为一组子问题，每个子问题都与原问题类型相同，但是比原问题的规模小。<br>2、递归求解这些子问题。<br>3、将子问题的求解结果恰当合并，得到原问题的解。</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/09/28/Algorithm/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/Algorithm/">view more&gt;&gt; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithm2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/Algorithm2/">算法的复杂度到底是怎么计算的？ --以分治算法为例</a>
+    <h1 class="article-title" itemprop="name">
+      算法的复杂度到底是怎么计算的？ --以分治算法为例
     </h1>
   
 
@@ -334,11 +177,60 @@
 <p>1、将原问题分解为一组子问题，每个子问题都与原问题类型相同，但是比原问题的规模小。<br>2、递归求解这些子问题。<br>3、将子问题的求解结果恰当合并，得到原问题的解。</p>
 </blockquote>
 </blockquote>
-        
-          <a class="article-more-a" href="/2018/09/28/Algorithm2/#more">more >></a>
-        
+<a id="more"></a>
+<h2 id="以计算乘法为例"><a href="#以计算乘法为例" class="headerlink" title="以计算乘法为例"></a>以计算乘法为例</h2><p>首先，计算两个数的乘法：$x\times y$，假定$x$和$y$是两个n位二进制数，并且n是2的幂。作为$x$乘以$y$的第一步，我们可以将这两个数都一分为二，每个数的左半部分和右半部分都是$n/2$位二进制数：<br>$<br>x=x_l+x_r=2^{n/2}x_l+x_r<br>$<br>$<br>y=y_l+y_r=2^{n/2}y_l+y_r<br>$</p>
+<blockquote>
+<p>例如，如果$x=10110110_2$（2进制数），那么$x_l=1011_2,x_r=0110_2$,同时，$x=1011_2\times 1^4+0110_2$。$x$和$y$的乘积可以写成：<br>$<br>xy=(2^{n/2}x_l+x_r)(2^{n/2}y_l+y_r)=2^nx_ly_l+2^n\underline{(x_ly_r+x_ry_l)}+x_ry_r<br>$<br>这样计算，每个问题都会分成四个规模减半的子问题，而每个子问题的规模都是原问题的一半，则它的运行时间为：<br>$<br>T(n)=4T(n/2)+O(n)<br>$（具体为什么？后面来说）</p>
+</blockquote>
+<p>这样一来，我们在每次计算的时候，都要计算四次乘法。<br>但是实际上只需要计算三次就足够了，因为$x_ly_r+x_ry_l=(x_l+x_r)(y_l+y_r)-x_ly_l-x_ry_r$，所以，上式可以写成：<br>$<br>xy=(2^{n/2}x_l+x_r)(2^{n/2}y_l+y_r)=2^nx_ly_l+2^n\underline{[(x_l+x_r)(y_l+y_r)-x_ly_l-x_ry_r]}+x_ry_r<br>$<br>如此一来，运行时间变为$T(n)=4T(n/2)+O(n)$（具体为什么？后面来说）</p>
+<p>具体的运行时间可以查看算法的递归调用模式来推出：<br>所有的递归调用构成了一个树状结构，如下图所示：<br><img src="/2018/09/28/Algorithm2/fenzhi1.png" alt="分治整数的乘法"></p>
+<blockquote>
+<p>对上图的分析：<br>为什么一共有$\log n$层呢？规模为n的计算，每层都变为上一层的一半，底层为1，所以一共有$\log n$层。<br>我们规模n记为第0层，从第一层开始，对每一层进行分析：<br>第一层花费时间：$3\times O(\frac{n}{2})=\frac{3}{2}\times O(n)$<br>第二层花费时间：$3^2\times O(\frac{n}{2^2})=\frac{3}{2}^2\times O(n)$<br>…<br>第k层花费时间：$3^k\times O(\frac{n}{2^k})=\frac{3}{2}^k\times O(n)$<br>在树的最顶层，所做工作耗时$O(n)$,在树的最底层，也就是$k=\log_2n$时，所做工作耗时$O(3^{\log_2n})$($=O(n^{\log_23}n$，用log的换底公式即可推出)。<br>在树的最顶层和最底层之间，所做的工作耗时从$O(n)$到$O(n^{\log_23}n$呈几何级数增长，每一次的增长因子是$3/2$，对于一个等比数列来说，任意递增的等比数列的和，只不过是级数末项的常数倍，因此算法的运行时间就是$O(n^{\log_23}n$，大约为$O(n^{1.59})$.</p>
+</blockquote>
+<p>同理地，上面的$T(n)=4T(n/2)+O(n)$最后得出时间复杂度为$O(n^2)$.</p>
+<p>由此，我们可以得出结论分治因子的微小改变将对算法运行时间产生巨大的影响。</p>
+<h2 id="主定理"><a href="#主定理" class="headerlink" title="主定理"></a>主定理</h2><blockquote>
+<p>如果对于常数a&gt;0,b&gt;1以及$d\geq 0$，有</p>
+<blockquote>
+<p>$T(n)=aT(\lceil n/b<br>\rceil)+O(n^d)$成立，则<br>$$T(n)=\begin{cases}<br>O(n^d) &amp; d&gt;log_ba\\<br>O(n^d\log n) &amp; d=log_ba\\<br>O(n^{\log_ba}) &amp; d&lt;log_ba<br>\end{cases}$$</p>
+</blockquote>
+</blockquote>
+<p>最后，附上上述分治算法的伪代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x,y</span>)</span></span><br><span class="line"><span class="function"><span class="title">Input</span>: <span class="title">n</span>-<span class="title">bit</span> <span class="title">positive</span> <span class="title">integers</span> <span class="title">x</span> <span class="title">and</span> <span class="title">y</span></span></span><br><span class="line"><span class="function"><span class="title">Output</span>: <span class="title">Their</span> <span class="title">product</span></span></span><br><span class="line"><span class="function">	<span class="title">if</span> <span class="title">n</span>==1</span></span><br><span class="line"><span class="function">		<span class="title">return</span> <span class="title">xy</span>;</span></span><br><span class="line"><span class="function">	<span class="title">xl</span>,<span class="title">xr</span>=<span class="title">leftmost</span>(<span class="params">n<span class="regexp">/2),rightmost(n/</span><span class="number">2</span></span>) <span class="title">bits</span> <span class="title">of</span> <span class="title">x</span>;</span></span><br><span class="line"><span class="function">	<span class="title">yl</span>,<span class="title">yr</span>=<span class="title">leftmost</span>(<span class="params">n<span class="regexp">/2),rightmost(n/</span><span class="number">2</span></span>) <span class="title">bits</span> <span class="title">of</span> <span class="title">y</span>;</span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function">	<span class="title">P1</span>=<span class="title">multiply</span>(<span class="params">xl,yl</span>);</span></span><br><span class="line"><span class="function">	<span class="title">P2</span>=<span class="title">multiply</span>(<span class="params">xr,yr</span>);</span></span><br><span class="line"><span class="function">	<span class="title">P3</span>=<span class="title">multiply</span>(<span class="params">xl+xr,yl+yr</span>);</span></span><br><span class="line"><span class="function">	<span class="title">return</span> <span class="title">p1</span>*2^<span class="title">n</span>+(<span class="params">P3-P1-P2</span>)*2^(<span class="params">n<span class="regexp">/2)+P2;</span></span></span></span><br></pre></td></tr></table></figure></p>
+<p>More info: <a href="https://congwang1996.github.io" target="_blank" rel="noopener">转载请注明出处</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="img/AlipayImage.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/WeChat Image.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -358,16 +250,79 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/Algorithm2/">view more&gt;&gt; >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/28/Algorithm2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/09/28/Algorithm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          算法的复杂度到底是怎么计算的？ --以分治算法为例
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -387,8 +342,45 @@
 
 
 
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Algorithm2" data-title="算法的复杂度到底是怎么计算的？ --以分治算法为例" data-url="http://yoursite.com/2018/09/28/Algorithm2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/09/28/Algorithm2/", 
+    sourceId: "Algorithm2",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
   
 
 
@@ -411,8 +403,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

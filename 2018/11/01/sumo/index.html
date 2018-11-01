@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Cynthia Wang</title>
+  <title>SUMO(Simulation of Urban Mobility)安装 --亲测版 | Cynthia Wang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cynthia Wang">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这里是内容简介">
+<meta name="keywords" content="仿真">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SUMO(Simulation of Urban Mobility)安装 --亲测版">
+<meta property="og:url" content="http://yoursite.com/2018/11/01/sumo/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
+<meta property="og:description" content="这里是内容简介">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/sumo/tar.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/sumo/error.png">
+<meta property="og:updated_time" content="2018-11-01T09:09:09.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cynthia Wang">
+<meta name="twitter:title" content="SUMO(Simulation of Urban Mobility)安装 --亲测版">
+<meta name="twitter:description" content="这里是内容简介">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/01/sumo/tar.png">
   
     <link rel="alternative" href="/atom.xml" title="Cynthia Wang" type="application/atom+xml">
   
@@ -144,16 +152,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-sumo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-sumo" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/sumo/">SUMO(Simulation of Urban Mobility)安装 --亲测版</a>
+    <h1 class="article-title" itemprop="name">
+      SUMO(Simulation of Urban Mobility)安装 --亲测版
     </h1>
   
 
@@ -172,11 +178,69 @@
 <p>笔者主攻车联网的数据分发及路由和NDN应用，在科研中需要做车联网仿真，所以用到了SUMO。</p>
 </blockquote>
 </blockquote>
-        
-          <a class="article-more-a" href="/2018/11/01/sumo/#more">more >></a>
-        
+<a id="more"></a>
+<h2 id="终端下载-简单，但是时间久。。。"><a href="#终端下载-简单，但是时间久。。。" class="headerlink" title="终端下载(简单，但是时间久。。。)"></a>终端下载(简单，但是时间久。。。)</h2><blockquote>
+<p>1、打开终端（Ctrl+Alt+t）<br>2、输入代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sumo sumo-tools sumo-doc</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>3、测试sumo版本信息及运行界面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sumo</span><br><span class="line">sumo-gui</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="下载sumo文件包，默认下载到了-home-Downloads-中"><a href="#下载sumo文件包，默认下载到了-home-Downloads-中" class="headerlink" title="下载sumo文件包，默认下载到了/home/Downloads/中"></a>下载sumo文件包，默认下载到了/home/Downloads/中</h2><blockquote>
+<p>1、<a href="https://sourceforge.net/projects/sumo/" target="_blank" rel="noopener">点击下载文件包</a><br>2、解压并进入sumo文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xzf sumo-src-1.0.1.tar.gz </span><br><span class="line">cd sumo-1.0.1/</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><img src="/2018/11/01/sumo/tar.png" alt="解压文件"><br>3、查看版本信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn co https://svn.code.sf.net/p/sumo/code/trunk/sumo</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>但是出现错误  </p>
+</blockquote>
+<blockquote>
+<p><img src="/2018/11/01/sumo/error.png" alt="解压文件">  </p>
+</blockquote>
+<blockquote>
+<p>我们需要安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install subversion</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>再重新查看版本信息即可（可能需要几分钟，哦不，十几分钟？）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd sumo</span><br><span class="line">make -f Makefile.cvs</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>这个是从别的博客看到的，可是这句截止就不行了？？目前没有找到解决方法。<br><a href="https://blog.csdn.net/zhixiting5325/article/details/79302244" target="_blank" rel="noopener">原博地址</a></p>
+</blockquote>
+<p>More info: <a href="https://congwang1996.github.io" target="_blank" rel="noopener">转载请注明出处</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="img/AlipayImage.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/WeChat Image.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -196,16 +260,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/sumo/">view more&gt;&gt; >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/01/sumo/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/28/Algorithm/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法的复杂度到底是怎么计算的？ --以分治算法为例</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -225,170 +348,45 @@
 
 
 
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="sumo" data-title="SUMO(Simulation of Urban Mobility)安装 --亲测版" data-url="http://yoursite.com/2018/11/01/sumo/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
-    <article id="post-Algorithm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/Algorithm/">算法的复杂度到底是怎么计算的？ --以分治算法为例</a>
-    </h1>
   
-
-        
-        <a href="/2018/09/28/Algorithm/" class="archive-article-date">
-  	<time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是分治算法？"><a href="#什么是分治算法？" class="headerlink" title="什么是分治算法？"></a>什么是分治算法？</h2><blockquote>
-<p>分治算法解决问题通常需要以下步骤：</p>
-<blockquote>
-<p>1、将原问题分解为一组子问题，每个子问题都与原问题类型相同，但是比原问题的规模小。<br>2、递归求解这些子问题。<br>3、将子问题的求解结果恰当合并，得到原问题的解。</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/09/28/Algorithm/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/Algorithm/">view more&gt;&gt; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithm2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/Algorithm2/">算法的复杂度到底是怎么计算的？ --以分治算法为例</a>
-    </h1>
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/11/01/sumo/", 
+    sourceId: "sumo",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        
-        <a href="/2018/09/28/Algorithm2/" class="archive-article-date">
-  	<time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是分治算法？"><a href="#什么是分治算法？" class="headerlink" title="什么是分治算法？"></a>什么是分治算法？</h2><blockquote>
-<p>分治算法解决问题通常需要以下步骤：</p>
-<blockquote>
-<p>1、将原问题分解为一组子问题，每个子问题都与原问题类型相同，但是比原问题的规模小。<br>2、递归求解这些子问题。<br>3、将子问题的求解结果恰当合并，得到原问题的解。</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/09/28/Algorithm2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/Algorithm2/">view more&gt;&gt; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -411,8 +409,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
