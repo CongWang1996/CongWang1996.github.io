@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Cynthia Wang</title>
+  <title>SUMO(Simulation of Urban Mobility)初级学习（一） | Cynthia Wang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cynthia Wang">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="生成网络地图，并进行车辆动画仿真">
+<meta name="keywords" content="仿真">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SUMO(Simulation of Urban Mobility)初级学习（一）">
+<meta property="og:url" content="http://yoursite.com/2018/11/12/sumo2/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
+<meta property="og:description" content="生成网络地图，并进行车辆动画仿真">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/sumo2/openstreetmap.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/sumo2/export.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/sumo2/selection.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/sumo2/xidianold.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/sumo2/xidiancolor.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/sumo2/simulation.png">
+<meta property="og:updated_time" content="2018-11-12T13:03:27.418Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cynthia Wang">
+<meta name="twitter:title" content="SUMO(Simulation of Urban Mobility)初级学习（一）">
+<meta name="twitter:description" content="生成网络地图，并进行车辆动画仿真">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/12/sumo2/openstreetmap.png">
   
     <link rel="alternative" href="/atom.xml" title="Cynthia Wang" type="application/atom+xml">
   
@@ -144,36 +156,103 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-sumo2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      SUMO(Simulation of Urban Mobility)初级学习（一）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/12/sumo2/" class="archive-article-date">
+
+        
+        <a href="/2018/11/12/sumo2/" class="archive-article-date">
   	<time datetime="2018-11-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/12/sumo2/">SUMO(Simulation of Urban Mobility)初级学习（一）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="从网上下载地图导入"><a href="#从网上下载地图导入" class="headerlink" title="从网上下载地图导入"></a>从网上下载地图导入</h2><blockquote>
+<p>因为在其他地方看到说ubuntu可以更好地支持sumo，且后续可能会用到ns3及ndnsim，所以我所有的内容都是在ubuntu中执行。</p>
+</blockquote>
+<a id="more"></a>
+<p>1、下载地图 <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">openstreetmap</a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2018/11/12/sumo2/openstreetmap.png" alt="openstreetmap"><br>2、截取地图，点击”Export”</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2018/11/12/sumo2/export.png" alt="export"><br>3、选择区域，可以手动选择，选择完成后点击Export，保存到自己想要的位置即可</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/2018/11/12/sumo2/selection.png" alt="select"><br>注：默认文件名为map.osm，我截取的西电附近的地图，将其改成了xidian.osm<br>4、将下载的文件生成net文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netconvert --osm-files xidian.osm -o xidian.net.xml</span><br></pre></td></tr></table></figure></p>
+<p>执行完成，有这两个文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Xidian$ ls</span><br><span class="line">xidian.net.xml xidian.osm</span><br></pre></td></tr></table></figure></p>
+<p>5、至此，我们可以用sumo来查看我们的地图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sumo-gui</span><br></pre></td></tr></table></figure></p>
+<p>File-&gt;Open Network…-&gt;选择xidian.net，打开结果如下图：<br><img src="/2018/11/12/sumo2/xidianold.png" alt="xidianold"><br>放大以后可以看到相关车道<br>6、为了使地图不这么单调，可以添加其他信息：<br>–首先需要编辑文件 typemap.xml，其内容为<a href="http://sumo.dlr.de/wiki/Networks/Import/OpenStreetMap#Importing_additional_Polygons_.28Buildings.2C_Water.2C_etc..29" target="_blank" rel="noopener">这里面的</a><br>接下来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo polyconvert -n xidian.net.xml --osm-files xidian.osm --osm.keep-full-type --type-file typemap.xml -o xidian.poly.xml</span><br></pre></td></tr></table></figure></p>
+<p>小等一下，就有新文件xidian.poly.xml生成</p>
+<p>我们再来看一下彩色的地图：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sumo-gui -n xidian.net.xml -a xidian.poly.xml</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/12/sumo2/xidiancolor.png" alt="xidiancolor"><br>!!重要的是执行时必须连网</p>
+<h2 id="在下载好地图的基础上自己定义交通流（这块是我自己研究的不知道是不是官方的方法）"><a href="#在下载好地图的基础上自己定义交通流（这块是我自己研究的不知道是不是官方的方法）" class="headerlink" title="在下载好地图的基础上自己定义交通流（这块是我自己研究的不知道是不是官方的方法）"></a>在下载好地图的基础上自己定义交通流（这块是我自己研究的不知道是不是官方的方法）</h2><p>1、我看到tutorial文件的data里面有flow文件，定义了不同的交通流从哪里出发，从哪里结束，所以我自己也照猫画虎来编辑了一下，当然，不能凭空写，要在net.xml中查看哪些道路是可以连通的，<br>由于在net.xml中有这几句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from=&quot;216086967#0&quot; to=&quot;216086967#1&quot;</span><br><span class="line">from=&quot;216086967#1&quot; to=&quot;216086964#0&quot;</span><br><span class="line">from=&quot;216086964#0&quot; to=&quot;216090099&quot;</span><br></pre></td></tr></table></figure></p>
+<p>216086967#0 坐标 6462.04,3830.31 6462.26,3831.66 6462.87,3832.62 6463.85,3833.17 6465.22,3833.33</p>
+<p>所以从216086967#0到216090099是连通的，因此我编辑了xidian.flow.xml如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;flows&gt; </span><br><span class="line">&lt;flow id=&quot;flow0&quot; from=&quot;216086967#0&quot; to=&quot;216090099&quot; begin=&quot;0&quot; end=&quot;1000&quot; </span><br><span class="line">number=&quot;100&quot; /&gt; </span><br><span class="line">&lt;/flows&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、将flow和net文件组合生成rou文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duarouter -n xidian.net.xml -f xidian.flow.xml -o xidian.rou.xml</span><br></pre></td></tr></table></figure></p>
+<p>至此我们生成了路由文件，但是里仿真文件还有差距<br>3、照着实例文件的hello.sumocfg进行编写xidian.sumocfg文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;configuration xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/sumoConfiguration.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input&gt;</span><br><span class="line">        &lt;net-file value=&quot;xidian.net.xml&quot;/&gt;</span><br><span class="line">        &lt;route-files value=&quot;xidian.rou.xml&quot;/&gt;</span><br><span class="line">    &lt;/input&gt;</span><br><span class="line"></span><br><span class="line">    &lt;time&gt;</span><br><span class="line">        &lt;begin value=&quot;0&quot;/&gt;</span><br><span class="line">        &lt;end value=&quot;10000&quot;/&gt;</span><br><span class="line">    &lt;/time&gt;</span><br><span class="line"></span><br><span class="line">    &lt;gui_only&gt;</span><br><span class="line">        &lt;gui-settings-file value=&quot;xidian.settings.xml&quot;/&gt;</span><br><span class="line">    &lt;/gui_only&gt;</span><br><span class="line"></span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中xidian.settings.xml是从data/hello中的setting文件复制过来的<br>4、打开仿真平台<br>File-&gt;Open Simulation…-&gt;选择xidian.sumocfg，打开结果如下图：<br><img src="/2018/11/12/sumo2/simulation.png" alt="simulation"><br>不要怀疑，上面黄色的小箭头就是车</p>
+<h2 id="轨迹文件的生成"><a href="#轨迹文件的生成" class="headerlink" title="轨迹文件的生成"></a>轨迹文件的生成</h2><p>我们做仿真不能只看一看小车怎么跑就完了，最重要的trace文件还没有得出，现在就差最后一步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sumo -c xidian.sumocfg --fcd-output xidianTrace.xml</span><br></pre></td></tr></table></figure></p>
+<p>这样我们就生成轨迹文件啦~<br>但是如果要在ns3中使用，就需要修改格式<br>将usr/share/sumo/tools/traceExporter.py放到当前文件夹中，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python traceExporter.py --fcd-input xidianTrace.xml --ns2activity-output xidian.activity.tcl</span><br></pre></td></tr></table></figure></p>
+<p>就生成了tcl轨迹文件</p>
+<h2 id="现在还存在问题"><a href="#现在还存在问题" class="headerlink" title="现在还存在问题"></a>现在还存在问题</h2><blockquote>
+<p>交通流真的是自己画吗？如何快速找到某个路口的编号？</p>
+</blockquote>
+<h2 id="后续还有内容没做"><a href="#后续还有内容没做" class="headerlink" title="后续还有内容没做"></a>后续还有内容没做</h2><p>利用ns2-mobility-trace 生成最终文件</p>
+<ul>
+<li>1.在ns3/src/mobility/examples下找到ns2-mobility-trace，复制到ns3/scratch下</li>
+<li>2.头文件加上ns3/netanim-module.h</li>
+<li>3.Simulator::Stop (Seconds (duration));之前加上AnimationInterface(“animation.xml”);</li>
+<li><ol start="4">
+<li>sudo ./waf –run “ scratch/ns2-mobility-trace –traceFile=/workspace/data/no2.mobility.tcl –nodeNum=3946 –duration=14762 –logFile=ns2-mobility-trace.log”</li>
+</ol>
+</li>
+<li>注：–nodeNum和 ex_FLOW.flow.xml里的实际节点数要一样（10）；–duration和 ex_FLOW.flow.xml里的end时间也最好保持一致，和ex_SUMO.sumo.cfg的end时间类似<br>多条flow记录产生，how to do it?(从生成的*.mobility.tcl 统计找出node 的最大数目以及持续时间)</li>
+</ul>
+<p>More info: <a href="https://congwang1996.github.io" target="_blank" rel="noopener">转载请注明出处</a></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="img/AlipayImage.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/WeChat Image.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,133 +264,137 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/12/sumo2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/sumo/" class="archive-article-date">
-  	<time datetime="2018-10-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/01/sumo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SUMO(Simulation of Urban Mobility)安装 --亲测版</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/sumo/">SUMO(Simulation of Urban Mobility)安装 --亲测版</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="sumo2" data-title="SUMO(Simulation of Urban Mobility)初级学习（一）" data-url="http://yoursite.com/2018/11/12/sumo2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/11/12/sumo2/", 
+    sourceId: "sumo2",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">仿真</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/28/Algorithm/" class="archive-article-date">
-  	<time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/28/Algorithm/">算法的复杂度到底是怎么计算的？ --以分治算法为例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/28/Algorithm2/" class="archive-article-date">
-  	<time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/28/Algorithm2/">算法的复杂度到底是怎么计算的？ --以分治算法为例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -334,8 +417,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
